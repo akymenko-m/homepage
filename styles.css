@@ -169,6 +169,35 @@ body {
     margin-bottom: 15px;
 }
 
+.skills__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills__block-title {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    color: var(--primary-text-color);
+    text-decoration-color: var(--text-decoration-color);
+    text-decoration-line: underline;
+}
+
+.skills__icon-wrapper {
+    width: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.skills__block-list {
+    /* list-style-type: none; */
+    list-style: inside;
+}
+
+.skills__block-item {
+    color: var(--secondary-text-color);
+}
+
 .skills__text {
     color: var(--secondary-text-color);
     text-align: justify;
