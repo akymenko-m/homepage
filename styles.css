@@ -51,8 +51,6 @@ body {
 }
 
 @media screen and (max-width: 576px) {
-
-    /* .main-info, */
     .contact_info_container {
         flex-direction: column;
     }
@@ -104,10 +102,26 @@ body {
     text-decoration: none;
     display: flex;
     justify-content: start;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-info__item:not(:last-child) {
     margin-bottom: 20px;
+}
+
+.contact-info__item path,
+.contact-info__item path {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-info__item:hover,
+.contact-info__item:focus {
+    color: var(--text-decoration-color);
+}
+
+.contact-info__item:hover path,
+.contact-info__item:focus path {
+    fill: var(--text-decoration-color);
 }
 
 .contact-info__item-icon-wrapper {
@@ -190,7 +204,6 @@ body {
 }
 
 .skills__block-list {
-    /* list-style-type: none; */
     list-style: inside;
 }
 
@@ -233,6 +246,18 @@ body {
     text-decoration: none;
 }
 
+.projects__block-name-link,
+.projects__block-link {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects__block-name-link:hover,
+.projects__block-name-link:focus,
+.projects__block-link:hover,
+.projects__block-link:focus {
+    color: var(--text-decoration-color);
+}
+
 .projects__block-technologies,
 .projects__block-role {
     color: var(--durability-text-color);
@@ -245,11 +270,6 @@ body {
 }
 
 /* Experience and additional info styles */
-
-/* .experiences {
-    flex: 1 1 60%;
-    margin-right: 50px;
-} */
 
 .experiences__header {
     color: var(--secondary-text-color);
@@ -295,14 +315,8 @@ body {
     padding-left: 20px;
 }
 
-.additional-info {
-    /* flex: 1 1 40%; */
-    /* flex: 1 40%; */
-}
-
 .additional-info__education {
     width: 60%;
-    /* margin-bottom: 20px; */
 }
 
 .additional-info__education-header {
@@ -322,10 +336,17 @@ body {
     font-size: 15px;
 }
 
-.additional-info__education-university-speciality {
+.additional-info__education-university-speciality-link {
+    text-decoration: none;
     color: var(--primary-text-color);
     text-align: left;
     margin-bottom: 10px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.additional-info__education-university-speciality-link:hover,
+.additional-info__education-university-speciality-link:focus {
+    color: var(--text-decoration-color);
 }
 
 .additional-info__education-university-name {
@@ -334,7 +355,6 @@ body {
 
 .additional-info__languages {
     width: 30%;
-    /* margin-bottom: 20px; */
 }
 
 .additional-info__languages-header {
