@@ -32,7 +32,7 @@ body {
 
 .fv {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -51,8 +51,6 @@ body {
 }
 
 @media screen and (max-width: 576px) {
-
-    .main-info,
     .contact_info_container {
         flex-direction: column;
     }
@@ -104,10 +102,25 @@ body {
     text-decoration: none;
     display: flex;
     justify-content: start;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-info__item:not(:last-child) {
     margin-bottom: 20px;
+}
+
+.contact-info__item path {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-info__item:hover,
+.contact-info__item:focus {
+    color: var(--text-decoration-color);
+}
+
+.contact-info__item:hover path,
+.contact-info__item:focus path {
+    fill: var(--text-decoration-color);
 }
 
 .contact-info__item-icon-wrapper {
@@ -117,19 +130,19 @@ body {
     justify-content: center;
 }
 
-.contact-info__item-icon path {
-    fill: var(--icon-color);
-}
-
 .contact-info__item-icon {
     height: 1.1428rem;
     vertical-align: text-bottom;
 }
 
+.contact-info__item-icon path {
+    fill: var(--icon-color);
+}
+
 .contact-info__avatar {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 112px;
+    height: 112px;
     object-fit: cover;
     border: 3px solid;
     border-color: var(--text-decoration-color);
@@ -169,21 +182,97 @@ body {
     margin-bottom: 15px;
 }
 
+.skills__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills__block-title {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    color: var(--primary-text-color);
+    text-decoration-color: var(--text-decoration-color);
+    text-decoration-line: underline;
+}
+
+.skills__icon-wrapper {
+    width: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.skills__block-list {
+    list-style: inside;
+}
+
+.skills__block-item {
+    color: var(--secondary-text-color);
+}
+
 .skills__text {
     color: var(--secondary-text-color);
     text-align: justify;
 }
 
-/* Experience and additional info styles */
+/* Projects info styles */
 
-.experiences {
-    flex: 1 1 60%;
-    margin-right: 50px;
+.projects__header {
+    color: var(--secondary-text-color);
+    text-align: center;
+    margin-bottom: 20px;
 }
+
+.projects__block:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.projects__block-header {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.projects__block-name-link {
+    color: var(--primary-text-color);
+    text-decoration-color: var(--text-decoration-color);
+    text-decoration-line: underline;
+}
+
+.projects__block-link {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+}
+
+.projects__block-name-link,
+.projects__block-link {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects__block-name-link:hover,
+.projects__block-name-link:focus,
+.projects__block-link:hover,
+.projects__block-link:focus {
+    color: var(--text-decoration-color);
+}
+
+.projects__block-technologies,
+.projects__block-role {
+    color: var(--durability-text-color);
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.projects__block-description {
+    color: var(--secondary-text-color);
+}
+
+/* Experience and additional info styles */
 
 .experiences__header {
     color: var(--secondary-text-color);
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -202,12 +291,12 @@ body {
     margin-bottom: 20px;
 }
 
-.experiences__company-project {
+.experiences__company-information {
     margin-left: 15px;
     margin-bottom: 25px;
 }
 
-.experiences__company-project-role {
+.experiences__company-role {
     color: var(--durability-text-color);
     text-align: left;
     margin-bottom: 10px;
@@ -220,22 +309,22 @@ body {
     margin-bottom: 10px;
 }
 
-.experiences__company-project-responsibilities {
+.experiences__company-responsibilities {
     color: var(--secondary-text-color);
     padding-left: 20px;
 }
 
-.additional-info {
-    flex: 1 1 40%;
-}
-
 .additional-info__education {
-    margin-bottom: 20px;
+    width: 60%;
 }
 
 .additional-info__education-header {
     color: var(--secondary-text-color);
     text-align: left;
+    margin-bottom: 20px;
+}
+
+.additional-info__education-university:not(:last-of-type) {
     margin-bottom: 20px;
 }
 
@@ -246,10 +335,17 @@ body {
     font-size: 15px;
 }
 
-.additional-info__education-university-speciality {
+.additional-info__education-university-speciality-link {
+    text-decoration: none;
     color: var(--primary-text-color);
     text-align: left;
     margin-bottom: 10px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.additional-info__education-university-speciality-link:hover,
+.additional-info__education-university-speciality-link:focus {
+    color: var(--text-decoration-color);
 }
 
 .additional-info__education-university-name {
@@ -257,7 +353,7 @@ body {
 }
 
 .additional-info__languages {
-    margin-bottom: 20px;
+    width: 30%;
 }
 
 .additional-info__languages-header {
